@@ -44,7 +44,11 @@ class Map {
   }
 
   get_tile_at(x) {
-    return this.tiles[x];
+    if (x < this.tiles.length) {
+      return this.tiles[x];
+    } else {
+      return "";
+    }
   }
 
   add_platform(min_x, max_x, type) {
@@ -53,6 +57,13 @@ class Map {
       this.tiles.push(type);
     }
   }
+<<<<<<< HEAD
+=======
+
+  clear_platform() {
+    this.tiles = []; //use this to clear the platform. Maybe when the game is over?
+  }
+>>>>>>> a32d653 (Improved get_tile_at function)
 }
 
 //map tests
@@ -120,11 +131,20 @@ class Fly extends GameObject {
 
 // Function definitions
 
+<<<<<<< HEAD
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 const collide = (obj1, obj2) => obj1.x === obj2.x;
+=======
+let timer = new Timer();
+const person = new Player(0);
+const fly = new Fly(random(7, 20));
+let gameOver = false;
+const m = new Map();
+m.add_platform(0, 10, "step");
+>>>>>>> ce67717 (Improved get_tile_at function)
 
 function focusGameArea() {
   return gameArea.focus();
@@ -253,6 +273,7 @@ function gameLoop() {
       currentStepSound = getRandomStepSound();
       currentStepSound.currentTime = 0;
       currentStepSound.play();
+      m.get_tile_at(person.x);
       timer.restart();
     }
   }
