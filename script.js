@@ -1,9 +1,23 @@
 // Class definitions
 
+<<<<<<< HEAD
 class Map {
   constructor() {
     this.tiles = []; //holds all the tiles
   }
+=======
+let frameId;
+let difficulty;
+let speakScoreInterval;
+const difficultyInput = document.getElementById("difficulty-input");
+const speakScoreIntervalLabel = document.getElementById(
+  "speak-score-interval-label"
+);
+const speakScoreIntervalInput = document.getElementById(
+  "speak-score-interval-input"
+);
+const speakScoreCheckbox = document.getElementById("speak-score-checkbox");
+>>>>>>> f071e6d (Added a verry basic map class)
 
   get_tile_at(x) {
     if (x < this.tiles.length) {
@@ -23,6 +37,32 @@ class Map {
     this.tiles = []; //use this to clear the platform. Maybe when the game is over?
   }
 }
+
+class Map {
+  constructor() {
+    this.tiles = []; //holds all the tiles
+  }
+
+  get_tile_at(x) {
+    return this.tiles[x];
+  }
+
+  add_platform(min_x, max_x, type) {
+    //min_x: the left most position the platform should start at. max_x: the right most x the platform should end at. type: The type of the tile you want to play or want the user to be on. Has to be string.
+    for (let i = min_x; i <= max_x; i++) {
+      this.tiles.push(type);
+    }
+  }
+}
+
+//map tests
+// m = new Map();
+// m.add_platform(0, 4, "rock");
+// m.add_platform(5, 8, "grass");
+// m.add_platform(9, 12, "water");
+// m.tiles.forEach((v, i) =>
+//   console.log(`${v} at ${i} got value with ${m.get_tile_at(i)}`)
+// );
 
 class Timer {
   constructor() {
