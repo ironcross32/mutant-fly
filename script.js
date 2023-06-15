@@ -1,4 +1,5 @@
 // Class definitions
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 class Map {
@@ -37,6 +38,8 @@ const speakScoreCheckbox = document.getElementById("speak-score-checkbox");
     this.tiles = []; //use this to clear the platform. Maybe when the game is over?
   }
 }
+=======
+>>>>>>> e08fb14 (Refactors code base such that all class and function declarations are at the top as best practices recommend due to hoisting behavior)
 
 class Map {
   constructor() {
@@ -52,7 +55,6 @@ class Map {
   }
 
   add_platform(min_x, max_x, type) {
-    //min_x: the left most position the platform should start at. max_x: the right most x the platform should end at. type: The type of the tile you want to play or want the user to be on. Has to be string.
     for (let i = min_x; i <= max_x; i++) {
       this.tiles.push(type);
     }
@@ -65,15 +67,6 @@ class Map {
   }
 >>>>>>> a32d653 (Improved get_tile_at function)
 }
-
-//map tests
-// m = new Map();
-// m.add_platform(0, 4, "rock");
-// m.add_platform(5, 8, "grass");
-// m.add_platform(9, 12, "water");
-// m.tiles.forEach((v, i) =>
-//   console.log(`${v} at ${i} got value with ${m.get_tile_at(i)}`)
-// );
 
 class Timer {
   constructor() {
@@ -132,11 +125,15 @@ class Fly extends GameObject {
 // Function definitions
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e08fb14 (Refactors code base such that all class and function declarations are at the top as best practices recommend due to hoisting behavior)
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 const collide = (obj1, obj2) => obj1.x === obj2.x;
+<<<<<<< HEAD
 =======
 let timer = new Timer();
 const person = new Player(0);
@@ -145,6 +142,8 @@ let gameOver = false;
 const m = new Map();
 m.add_platform(0, 10, "step");
 >>>>>>> ce67717 (Improved get_tile_at function)
+=======
+>>>>>>> e08fb14 (Refactors code base such that all class and function declarations are at the top as best practices recommend due to hoisting behavior)
 
 function focusGameArea() {
   return gameArea.focus();
@@ -273,7 +272,10 @@ function gameLoop() {
       currentStepSound = getRandomStepSound();
       currentStepSound.currentTime = 0;
       currentStepSound.play();
+<<<<<<< HEAD
       m.get_tile_at(person.x);
+=======
+>>>>>>> 9c92edf (Refactors code base such that all class and function declarations are at the top as best practices recommend due to hoisting behavior)
       timer.restart();
     }
   }
